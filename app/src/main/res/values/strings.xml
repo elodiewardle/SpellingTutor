@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">SpellingTest</string>
+    <string name="spk">Speak</string>
+    <string name="nxt">Next</string>
+    <string name="enter_answer">Enter your answer here</string>
+    <string name="spelling_tutor">Spelling Tutor</string>
+    <string name="create_list">Create a list</string>
+    <string name="view_lists">View Lists</string>
+    <string name="start_test">Start Test</string>
+    <string name="restart">Restart</string>
+    <string name="return_to_home">Return to Home</string>
+</resources>
