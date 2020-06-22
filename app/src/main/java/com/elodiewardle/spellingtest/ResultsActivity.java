@@ -13,6 +13,7 @@ import android.widget.TextView;
 public class ResultsActivity extends AppCompatActivity {
     private static final String BULLET_SYMBOL = "&#8226";
     String[] spellingWords;
+    String[] wordsMissed;
     boolean[] correct;
     int numCorrect;
     TextView tvr;
@@ -28,11 +29,12 @@ public class ResultsActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         spellingWords = intent.getStringArrayExtra("words");
+        wordsMissed = intent.getStringArrayExtra("wordsMissed");
         correct = intent.getBooleanArrayExtra("results");
 
         numCorrect = calculateResults();
         tvr = (TextView) findViewById(R.id.results);
-        String resultsMessage = "You got " + numCorrect + " out of " + correct.length + " of the answers correct.";
+        String resultsMessage = "You got " + numCorrect + " of the " + correct.length + " answers correct.";
         tvr.setText(resultsMessage);
 
         tvc = (TextView) findViewById(R.id.correct_words);
@@ -44,7 +46,7 @@ public class ResultsActivity extends AppCompatActivity {
                 correctWords += "   " + Html.fromHtml(BULLET_SYMBOL) + " " + spellingWords[i] + "\n";
             }
             else{
-                incorrectWords += "   " + Html.fromHtml(BULLET_SYMBOL) + " " + spellingWords[i] + "\n";
+                incorrectWords += "   " + Html.fromHtml(BULLET_SYMBOL) + " " + spellingWords[i] + " (was spelled " + wordsMissed[i] + ")\n";
             }
         }
         tvc.setText(correctWords);

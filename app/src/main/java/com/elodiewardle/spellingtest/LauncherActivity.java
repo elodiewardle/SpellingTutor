@@ -24,8 +24,16 @@ public class LauncherActivity extends AppCompatActivity {
         startTest.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getBaseContext(), MainActivity.class);
-                startActivity(intent);
+                Intent intent1 = new Intent(getBaseContext(), MainActivity.class);
+                startActivity(intent1);
+            }
+        });
+
+        createList.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent2 = new Intent(getBaseContext(), CreateListActivity.class);
+                startActivity(intent2);
             }
         });
     }
